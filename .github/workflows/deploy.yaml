@@ -1,48 +1,29 @@
-name: Build and Publish Resume
+name: Deploy to GitHub Pages
 
 on:
   push:
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # Needed to allow pushing back to the repo
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          persist-credentials: false  # we'll manually set credentials
+          path: '.'  # This includes index.html and all assets
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install Puppeteer
-        run: npm install puppeteer
-
-      - name: Generate Resume PDF using Puppeteer
-        run: |
-          echo "const puppeteer = require('puppeteer');
-          (async () => {
-            const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox'] });
-            const page = await browser.newPage();
-            await page.goto('file://' + process.cwd() + '/index.html', { waitUntil: 'networkidle0' });
-            await page.pdf({ path: 'Badal_Rihan_Basha_Resume.pdf', format: 'A4', printBackground: true });
-            await browser.close();
-          })();" > generate.js
-          node generate.js
-
-      - name: Commit and Push PDF to Repository
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git add Badal_Rihan_Basha_Resume.pdf
-          git commit -m "Add generated PDF resume" || echo "No changes to commit"
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
-          git push
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
