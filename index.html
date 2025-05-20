@@ -2,56 +2,129 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>John Doe - Resume</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Badal Rihan Basha - Resume</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="overlay">
-    <div class="container">
-      <h1>John Doe</h1>
-      <p class="contact-info">
-        📞 (123) 456-7890 | 📧 john.doe@example.com | 🌐 www.johndoe.com
+<body
+  class="bg-fixed bg-center bg-cover"
+  style="background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413')"
+>
+  <div class="bg-white bg-opacity-90 min-h-screen py-10 px-5">
+    <div class="max-w-4xl mx-auto bg-white p-10 rounded-xl shadow-lg">
+      <!-- Name -->
+      <h1 class="text-5xl font-extrabold text-gray-900 mb-2">Badal Rihan Basha</h1>
+
+      <!-- Contact Info -->
+      <p class="text-center text-gray-600 mb-10 text-sm space-x-4">
+        <span>📞 6281531818</span>
+        <span>|</span>
+        <span>
+          📧
+          <a
+            href="mailto:rihanbasha08@gmail.com"
+            class="text-blue-600 hover:underline"
+            >rihanbasha08@gmail.com</a
+          >
+        </span>
       </p>
 
-      <section>
-        <h2>Professional Summary</h2>
-        <p>
-          Highly motivated software engineer with 3+ years of experience in full-stack web development, cloud computing, and DevOps practices. Passionate about building efficient and scalable applications.
+      <!-- Professional Summary -->
+      <section class="mb-10">
+        <h2
+          class="text-3xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4"
+        >
+          Professional Summary
+        </h2>
+        <p class="text-gray-700 leading-relaxed text-lg">
+          DevOps Engineer with 2 years of progressive experience in the fintech
+          industry, starting from campus placement. Skilled in designing,
+          implementing, and maintaining CI/CD pipelines using GitHub Actions.
+          Experienced in managing container orchestration with Kubernetes,
+          including monitoring solutions with Prometheus and Grafana. Hands-on
+          expertise in AWS services, particularly Amazon EKS, to deploy and
+          scale cloud-native applications. Passionate about automating
+          infrastructure and improving system reliability to support fast-paced
+          development environments.
         </p>
       </section>
 
-      <section>
-        <h2>Skills</h2>
-        <ul>
-          <li>Programming: C, C++, Python, JavaScript, HTML/CSS, Java</li>
-          <li>Frameworks: React, Node.js, Django</li>
-          <li>Tools: Git, Docker, Kubernetes, Jenkins</li>
-          <li>Cloud: AWS, Azure</li>
+      <!-- Skills -->
+      <section class="mb-10">
+        <h2
+          class="text-3xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4"
+        >
+          Skills
+        </h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 text-lg">
+          <li>Programming: C, C++, Python, JavaScript, HTML/CSS, YAML scripting</li>
+          <li>Frameworks: Django</li>
+          <li>Tools: Git, Docker, Kubernetes, Jenkins, Prometheus, Grafana</li>
+          <li>Cloud: AWS (including EKS), Azure</li>
+          <li>Infrastructure as Code: Terraform, Ansible</li>
         </ul>
       </section>
 
-      <section>
-        <h2>Work Experience</h2>
-        <p><strong>Software Engineer</strong> – XYZ Corp (2022 - Present)</p>
-        <ul>
-          <li>Developed and maintained scalable REST APIs in Node.js and Express.</li>
-          <li>Implemented CI/CD pipelines using Jenkins and GitHub Actions.</li>
-          <li>Deployed microservices on AWS using Docker and Kubernetes.</li>
+      <!-- Work Experience -->
+      <section class="mb-10">
+        <h2
+          class="text-3xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4"
+        >
+          Work Experience
+        </h2>
+        <p class="text-lg font-semibold text-gray-900 mb-2">
+          DevOps Engineer – PineLabs (2023 - Present)
+        </p>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 text-lg">
+          <li>
+            Successfully transferred all deployed applications and associated
+            pipelines from one infrastructure to another, ensuring seamless
+            connectivity and zero downtime.
+          </li>
+          <li>
+            Managed and optimized CI/CD pipelines using GitHub Actions to
+            automate deployments and infrastructure provisioning.
+          </li>
+          <li>
+            Currently working on enhancing pipeline processes to ensure full
+            compliance with IT General Controls (ITGC) standards and regulatory
+            requirements.
+          </li>
+          <li>
+            Implemented monitoring solutions using Prometheus and Grafana to
+            improve system reliability and performance visibility.
+          </li>
         </ul>
       </section>
 
-      <section>
-        <h2>Education</h2>
-        <p><strong>Bachelor of Technology in Computer Science</strong></p>
-        <p>ABC University, 2018 - 2022</p>
+      <!-- Education -->
+      <section class="mb-10">
+        <h2
+          class="text-3xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4"
+        >
+          Education
+        </h2>
+        <p class="text-lg font-semibold text-gray-900">Bachelor of Technology in Computer Science</p>
+        <p class="text-gray-700 text-lg">Sastra University, 2019 - 2023</p>
       </section>
 
+      <!-- College Projects -->
       <section>
-        <h2>Projects</h2>
-        <ul>
-          <li><strong>Movie Recommendation System</strong>: Built a collaborative filtering-based movie recommendation app using Python and Flask.</li>
-          <li><strong>Student Support Team</strong>: Developed a web app to automate student queries and notifications using Node.js.</li>
+        <h2
+          class="text-3xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4"
+        >
+          College Projects
+        </h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-1 text-lg">
+          <li>
+            <strong>Movie Recommendation System</strong>: Built a collaborative
+            filtering-based movie recommendation app using Python and Flask.
+          </li>
+          <li>
+            <strong>Student Support Team</strong>: Developed a web app to
+            automate student queries and notifications using Node.js.
+          </li>
         </ul>
       </section>
     </div>

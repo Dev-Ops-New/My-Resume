@@ -1,51 +1,81 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('https://images.unsplash.com/photo-1503264116251-35a269479413') no-repeat center center fixed;
-    background-size: cover;
-  }
-  
-  .overlay {
-    background-color: rgba(255, 255, 255, 0.9);
-    min-height: 100vh;
-    padding: 40px 20px;
-  }
-  
-  .container {
-    max-width: 900px;
-    background-color: #fff;
-    margin: auto;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://images.unsplash.com/photo-1503264116251-35a269479413') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.9);
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 900px;
+  background-color: #fff;
+  margin: auto;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings */
+h1 {
+  margin-bottom: 0;
+  font-size: 36px;
+  color: #2c3e50;
+}
+
+.contact-info {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.contact-info a {
+  color: #2980b9;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #1c5980;
+  text-decoration: underline;
+}
+
+h2 {
+  color: #34495e;
+  border-bottom: 2px solid #bdc3c7;
+  padding-bottom: 8px;
+  margin-top: 40px;
+  letter-spacing: 1px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style-type: circle;
+  padding-left: 25px;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+p {
+  color: #2c3e50;
+}
+
+/* Responsive typography */
+@media (max-width: 600px) {
   h1 {
-    margin-bottom: 0;
-    font-size: 36px;
-    color: #2c3e50;
+    font-size: 28px;
   }
-  
-  .contact-info {
-    font-size: 14px;
-    color: #7f8c8d;
-    margin-bottom: 30px;
+  .container {
+    padding: 20px;
   }
-  
-  h2 {
-    color: #34495e;
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 5px;
-    margin-top: 30px;
-  }
-  
-  ul {
-    list-style-type: square;
-    padding-left: 20px;
-    color: #2c3e50;
-  }
-  
-  p {
-    color: #2c3e50;
-  }
+}
