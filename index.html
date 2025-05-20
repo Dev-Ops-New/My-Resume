@@ -1,132 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Badal Rihan Basha - Resume</title>
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    .a4-wrapper {
+      width: 794px; /* A4 width at 96 dpi */
+      min-height: 1123px; /* A4 height */
+      margin: auto;
+      padding: 20mm;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    @media print {
+      body {
+        margin: 0;
+        background: white;
+      }
+      .a4-wrapper {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+        page-break-after: always;
+      }
+    }
+  </style>
 </head>
-<body
-  class="bg-fixed bg-center bg-cover"
-  style="background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413')"
->
-  <div class="bg-white bg-opacity-90 min-h-screen py-10 px-5">
-    <div class="max-w-4xl mx-auto bg-white p-10 rounded-xl shadow-lg">
-      <!-- Name -->
-      <h1 class="text-5xl font-extrabold text-gray-900 mb-2">Badal Rihan Basha</h1>
+<body class="bg-gray-50 font-sans">
+  <div class="a4-wrapper">
+    <!-- Page heading -->
+    <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-8 uppercase tracking-wider">Resume</h1>
 
-      <!-- Contact Info -->
-      <p class="text-center text-gray-600 mb-10 text-sm space-x-4">
-        <span>📞 6281531818</span>
-        <span>|</span>
-        <span>
-          📧
-          <a
-            href="mailto:rihanbasha08@gmail.com"
-            class="text-blue-600 hover:underline"
-            >rihanbasha08@gmail.com</a
-          >
-        </span>
-      </p>
+    <div class="grid grid-cols-[35%_65%] gap-8">
+      
+      <!-- Left Sidebar -->
+      <aside class="bg-gray-100 rounded-lg p-6 flex flex-col items-center gap-6">
+        <img src="resume.jpeg" alt="Badal Rihan Basha" class="w-40 h-40 rounded-full object-cover shadow-md" />
+        <div class="text-center">
+          <h1 class="text-3xl font-bold text-gray-800">Badal Rihan Basha</h1>
+        </div>
 
-      <!-- Professional Summary -->
-      <section class="mb-10">
-        <h2
-          class="text-3xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4"
-        >
-          Professional Summary
-        </h2>
-        <p class="text-gray-700 leading-relaxed text-lg">
-          DevOps Engineer with 2 years of progressive experience in the fintech
-          industry, starting from campus placement. Skilled in designing,
-          implementing, and maintaining CI/CD pipelines using GitHub Actions.
-          Experienced in managing container orchestration with Kubernetes,
-          including monitoring solutions with Prometheus and Grafana. Hands-on
-          expertise in AWS services, particularly Amazon EKS, to deploy and
-          scale cloud-native applications. Passionate about automating
-          infrastructure and improving system reliability to support fast-paced
-          development environments.
-        </p>
-      </section>
+        <section class="w-full">
+          <h2 class="text-xl font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3">Contact</h2>
+          <p class="text-gray-600 mt-1 text-sm">📞 6281531818</p>
+          <p class="text-gray-600 text-sm">📧 rihanbasha08@gmail.com</p>
+        </section>
 
-      <!-- Skills -->
-      <section class="mb-10">
-        <h2
-          class="text-3xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4"
-        >
-          Skills
-        </h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-1 text-lg">
-          <li>Programming: C, C++, Python, JavaScript, HTML/CSS, YAML scripting</li>
-          <li>Frameworks: Django</li>
-          <li>Tools: Git, Docker, Kubernetes, Jenkins, Prometheus, Grafana</li>
-          <li>Cloud: AWS (including EKS), Azure</li>
-          <li>Infrastructure as Code: Terraform, Ansible</li>
-        </ul>
-      </section>
+        <section class="w-full">
+          <h2 class="text-xl font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3">Education</h2>
+          <p class="text-gray-600 text-sm mt-2">Sastra University, B.Tech Computer Science (2019 - 2023)</p>
+        </section>
 
-      <!-- Work Experience -->
-      <section class="mb-10">
-        <h2
-          class="text-3xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4"
-        >
-          Work Experience
-        </h2>
-        <p class="text-lg font-semibold text-gray-900 mb-2">
-          DevOps Engineer – PineLabs (2023 - Present)
-        </p>
-        <ul class="list-disc list-inside text-gray-700 space-y-1 text-lg">
-          <li>
-            Successfully transferred all deployed applications and associated
-            pipelines from one infrastructure to another, ensuring seamless
-            connectivity and zero downtime.
-          </li>
-          <li>
-            Managed and optimized CI/CD pipelines using GitHub Actions to
-            automate deployments and infrastructure provisioning.
-          </li>
-          <li>
-            Currently working on enhancing pipeline processes to ensure full
-            compliance with IT General Controls (ITGC) standards and regulatory
-            requirements.
-          </li>
-          <li>
-            Implemented monitoring solutions using Prometheus and Grafana to
-            improve system reliability and performance visibility.
-          </li>
-        </ul>
-      </section>
+        <section class="w-full">
+          <h2 class="text-xl font-semibold text-gray-700 border-b border-gray-300 pb-1 mb-3">Skills</h2>
+          <ul class="text-gray-700 space-y-2 text-sm leading-relaxed">
+            <li><strong>Programming:</strong><br/>C, C++, Python, JavaScript,<br/>HTML/CSS, YAML scripting</li>
+            <li>🧩 <strong>Frameworks:</strong> Django</li>
+            <li>🛠️ <strong>Tools:</strong> Git, Docker, Kubernetes, Jenkins, Prometheus, Grafana</li>
+            <li>☁️ <strong>Cloud:</strong> AWS (EKS), Azure</li>
+            <li>🔧 <strong>Infrastructure as Code:</strong> Terraform, Ansible</li>
+          </ul>
+        </section>
+      </aside>
 
-      <!-- Education -->
-      <section class="mb-10">
-        <h2
-          class="text-3xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4"
-        >
-          Education
-        </h2>
-        <p class="text-lg font-semibold text-gray-900">Bachelor of Technology in Computer Science</p>
-        <p class="text-gray-700 text-lg">Sastra University, 2019 - 2023</p>
-      </section>
+      <!-- Main Content -->
+      <main class="bg-white rounded-lg p-6 shadow-md text-gray-800">
+        
+        <section>
+          <h2 class="text-2xl font-bold mb-3 border-b border-gray-300 pb-1">Professional Summary</h2>
+          <p class="text-sm leading-relaxed">
+            DevOps Engineer with 2 years of progressive experience in the fintech industry, starting from campus placement. Skilled in designing, implementing, and maintaining CI/CD pipelines using GitHub Actions. Experienced in managing container orchestration with Kubernetes, including monitoring solutions with Prometheus and Grafana. Hands-on expertise in AWS services, particularly Amazon EKS, to deploy and scale cloud-native applications. Passionate about automating infrastructure and improving system reliability to support fast-paced development environments.
+          </p>
+        </section>
 
-      <!-- College Projects -->
-      <section>
-        <h2
-          class="text-3xl font-semibold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4"
-        >
-          College Projects
-        </h2>
-        <ul class="list-disc list-inside text-gray-700 space-y-1 text-lg">
-          <li>
-            <strong>Movie Recommendation System</strong>: Built a collaborative
-            filtering-based movie recommendation app using Python and Flask.
-          </li>
-          <li>
-            <strong>Student Support Team</strong>: Developed a web app to
-            automate student queries and notifications using Node.js.
-          </li>
-        </ul>
-      </section>
+        <section class="mt-8">
+          <h2 class="text-2xl font-bold mb-3 border-b border-gray-300 pb-1">Work Experience</h2>
+          <p class="font-semibold">DevOps Engineer – PineLabs (2023 - Present)</p>
+          <ul class="list-disc list-inside mt-2 space-y-2 text-sm">
+            <li>Successfully transferred all deployed applications and associated pipelines from one infrastructure to another, ensuring seamless connectivity and zero downtime.</li>
+            <li>Managed and optimized CI/CD pipelines using GitHub Actions to automate deployments and infrastructure provisioning.</li>
+            <li>Currently working on enhancing pipeline processes to ensure full compliance with IT General Controls (ITGC) standards and regulatory requirements.</li>
+            <li>Implemented monitoring solutions using Prometheus and Grafana to improve system reliability and performance visibility.</li>
+          </ul>
+        </section>
+
+        <section class="mt-8">
+          <h2 class="text-2xl font-bold mb-3 border-b border-gray-300 pb-1">College Projects</h2>
+          <ul class="list-disc list-inside space-y-2 text-sm">
+            <li><strong>Movie Recommendation System:</strong> Built a collaborative filtering-based movie recommendation app using Python and Flask.</li>
+            <li><strong>Student Support Team:</strong> Developed a web app to automate student queries and notifications using Node.js.</li>
+          </ul>
+        </section>
+
+      </main>
     </div>
   </div>
 </body>

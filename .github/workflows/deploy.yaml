@@ -1,26 +1,40 @@
-name: Deploy Resume to GitHub Pages
+name: Build and Publish Resume
 
-on: [push, workflow_dispatch]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload static files
-        uses: actions/upload-pages-artifact@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          path: .  # Upload everything in the repo root
+          node-version: 18
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Generate Resume PDF using Puppeteer
+        run: |
+          echo "const puppeteer = require('puppeteer');
+          (async () => {
+            const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox'] });
+            const page = await browser.newPage();
+            await page.goto('file://' + process.cwd() + '/index.html', { waitUntil: 'networkidle0' });
+            await page.pdf({ path: 'Badal_Rihan_Basha_Resume.pdf', format: 'A4', printBackground: true });
+            await browser.close();
+          })();" > generate.js
+          node generate.js
+
+      - name: Commit and Push PDF to GitHub Pages branch
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add Badal_Rihan_Basha_Resume.pdf
+          git commit -m "Add generated PDF resume"
+          git push
